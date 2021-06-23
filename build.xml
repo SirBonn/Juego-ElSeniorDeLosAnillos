@@ -25,16 +25,16 @@
 
     <target name="runClass" depends ="compile" description ="compile the source" >
         <!-- Compilando el código en ${src} a ${build} -->
-        <java classname ="src.MainSeniorAnillos" classpath ="${build}" />
+        <java classname ="MainSeniorAnillos.MainGame" classpath ="${build}" />
     </target >
 
     <target name="jar" depends ="compile" description ="Generando el directori dist para almacenar el Jar " >
         <!-- Creamos el directorio dist/lib -->
         <mkdir dir="${dist}/lib" />
         <!-- Agregamos todo lo que hay en ${build} en ${nameDist}-${DSTAMP}.jar -->
-        <jar jarfile ="${dist}/lib/MyApp-${DSTAMP}.jar" basedir ="${build}" >
+        <jar jarfile ="${dist}/lib/Juego-SeniorDeLosAnillos.jar" basedir ="${build}" >
             <manifest >
-                <attribute name="Main-Class" value ="src/MainSeniorAnillos/MainGame" />
+                <attribute name="Main-Class" value ="MainSeniorAnillos/MainGame" />
             </manifest >
         </jar>
     </target >
