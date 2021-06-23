@@ -19,13 +19,14 @@ public class Ser {
     public void atacar(Ser objetivo){
         System.out.println(this.toString()+"   vs   " +objetivo.toString()+"\n\n");
         int daño = this.getAtaque(objetivo) - objetivo.getArmadura(this);
-        if(daño<=0){
+        if(daño>0){
             objetivo.setSalud(objetivo.getSalud()-daño);
+            System.out.println("El " +this.raza+" le hizo " +daño +" puntos de daño al " +objetivo.getRaza());
+
+            System.out.println("\nResultado\n"+this.toString()+"   vs   " +objetivo.toString()+"\n\n");
         } else {
             System.out.println("La armadura absorbio todo el daño");
         }
-
-        System.out.println("el" +this.raza+" Le hizo " +daño +" puntos de daño al " +objetivo.getRaza());
     }
 
     public int getAtaque(Ser objetivo) {
@@ -62,7 +63,8 @@ public class Ser {
     }
 
     public boolean isMuerto() {
-        if (this.salud == 0) {
+        if (this.salud <= 0) {
+            System.out.println(this.raza +"Ha muerto");
             return true;
         } else
             return false;
