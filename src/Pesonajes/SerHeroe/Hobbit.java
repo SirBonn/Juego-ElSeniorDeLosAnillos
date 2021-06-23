@@ -1,7 +1,22 @@
 package Pesonajes.SerHeroe;
 
-public class Hobbit extends Heroe{
-    public Hobbit(){
-        super(200, 25);
+import MainSeniorAnillos.Datos;
+import Pesonajes.Ser;
+import Pesonajes.SerBestia.Trasgo;
+
+public class Hobbit extends Heroe {
+    public Hobbit() {
+        super(200, Datos.getNumeroRandom(60, 25, false), "Hobbit");
     }
+
+    @Override
+    public int getAtaque(Ser objetivo) {
+        if (objetivo instanceof Trasgo) {
+            System.out.println("Ataque con miedo");
+            return this.getAtaque() - 5;
+        }
+        return super.getAtaque();
+    }
+
+
 }
