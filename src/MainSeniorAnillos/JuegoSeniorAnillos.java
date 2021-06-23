@@ -66,20 +66,22 @@ public class JuegoSeniorAnillos {
     }
 
     private void enfrentarEjercitos() {
+        int slot;
         do {
             mostrarEjercitos();
-            int slot = Datos.getNumero("Turno de Heroes\nCon que heroe deseas pelear?", true);
+            slot = Datos.getNumero("Turno de Heroes\nCon que heroe deseas pelear?", true);
             Datos.epserar("---Pulsa para lanzar dados de ataque---");
             ejercitoHeroe[slot].setAtaque(Datos.getNumeroRandom(100, 1, true));
             ejercitoHeroe[slot].atacar(ejercitoBestias[slot]);
             murio(ejercitoBestias[slot], slot);
             Datos.epserar("---Pulsa para continuar---");
             mostrarEjercitos();
-            slot = Datos.getNumero("\n\nTurno de Bestias\nCon que heroe deseas pelear?", true);
+            slot = Datos.getNumero("\n\nTurno de Bestias\nCon que Bestia deseas pelear?", true);
             Datos.epserar("---Pulsa para lanzar dados de ataque---");
             ejercitoBestias[slot].setAtaque(Datos.getNumeroRandom(90, 1, false));
             ejercitoBestias[slot].atacar(ejercitoHeroe[slot]);
             murio(ejercitoHeroe[slot], slot);
+            Datos.epserar("---Pulsa para continuar---");
             System.out.println("Numero de bajas: " +muertos);
         } while (this.muertos < 10);
     }

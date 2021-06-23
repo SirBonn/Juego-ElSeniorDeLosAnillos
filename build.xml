@@ -51,7 +51,7 @@
 
     <!-- Ejecutando el jar -->
     <target name="run" depends ="jar" >
-        <java jar="${dist}/lib/MyApp-${DSTAMP}.jar" fork="true" />
+        <java jar="${dist}/lib/Juego-SeniorDeLosAnillos.jar" fork="true" />
     </target >
 
     <!-- Eliminamos los directorios ${build} y ${dist} -->

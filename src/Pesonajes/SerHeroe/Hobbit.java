@@ -2,7 +2,7 @@ package Pesonajes.SerHeroe;
 
 import MainSeniorAnillos.Datos;
 import Pesonajes.Ser;
-import Pesonajes.SerBestia.Trasgo;
+import Pesonajes.SerBestia.Orco;
 
 public class Hobbit extends Heroe {
     public Hobbit() {
@@ -11,7 +11,7 @@ public class Hobbit extends Heroe {
 
     @Override
     public int getAtaque(Ser objetivo) {
-        if (objetivo instanceof Trasgo) {
+        if (objetivo instanceof Orco) {
             System.out.println("Ataque con miedo");
             return this.getAtaque() - 5;
         }
