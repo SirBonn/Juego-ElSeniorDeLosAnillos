@@ -6,7 +6,7 @@ import Pesonajes.SerBestia.Trasgo;
 
 public class Hobbit extends Heroe {
     public Hobbit() {
-        super(200, Datos.getNumeroRandom(60, 25, false), "Hobbit");
+        super(200, Datos.getNumeroRandom(40, 20, false), "Hobbit");
     }
 
     @Override
