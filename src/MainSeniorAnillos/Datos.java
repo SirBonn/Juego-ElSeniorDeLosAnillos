@@ -20,8 +20,10 @@ public class Datos {
             int aux = tmp;
             tmp = (int) (Math.random() * max) + min;
             if (aux < tmp) {
+                System.out.println("Del tiro de dados el mayor fue " +aux);
                 return aux;
             } else {
+                System.out.println("Del tiro de dados el mayor fue " +tmp);
                 return tmp;
             }
 
@@ -29,17 +31,24 @@ public class Datos {
 
     }
 
-    public static int getNumero(String mensaje) {
+    public static int getNumero(String mensaje, boolean isArreglo) {
         mostrarMensaje(mensaje);
         int tmp = Integer.parseInt(sc.nextLine());
         if (tmp < 0) {
-            do {
-                mostrarMensaje("\n\n El dato ingresdo no puede ser negativo\n");
+            while(tmp<0) {
+                mostrarMensaje("\n\nEl dato ingresado no puede ser negativo\n");
                 mostrarMensaje(mensaje);
                 tmp = Integer.parseInt(sc.nextLine());
-            } while (tmp < 0);
+            }
+        } if(isArreglo){
+            while(tmp>10){
+                mostrarMensaje("\n\nEl dato ingresado no puede ser mayor a 10\n");
+                mostrarMensaje(mensaje);
+                tmp = Integer.parseInt(sc.nextLine());
+            }
         }
-        return tmp;
+
+        return tmp-1;
     }
 
 
@@ -47,5 +56,10 @@ public class Datos {
         mostrarMensaje(mensaje);
         String texto = sc.nextLine();
         return texto;
+    }
+
+    public static void epserar(String mensaje){
+        mostrarMensaje(mensaje);
+        String tmp = sc.nextLine();
     }
 }
